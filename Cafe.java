@@ -27,6 +27,7 @@ public class Cafe extends Building {
      * @param nSugarPackets  The initial number of sugar packets in stock.
      * @param nCreams        The initial number of cream portions in stock.
      * @param nCups          The initial number of cups in stock.
+     * @param hasElevator    Whether the cafe has elevator
      */
     public Cafe(String name, String address, int nFloors, int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups, Boolean hasElevator) {
         super(name, address, nFloors);
@@ -106,10 +107,14 @@ public class Cafe extends Building {
      * @param nCups          The cups to restock.
      */
     private void restock(int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups) {
-        if (nCoffeeOunces > 0) { this.nCoffeeOunces += nCoffeeOunces; }
-        if (nSugarPackets > 0) { this.nSugarPackets += nSugarPackets; }
-        if (nCreams > 0) { this.nCreams += nCreams; }
-        if (nCups > 0) { this.nCups += nCups; }
+        if (nCoffeeOunces > 0) {
+            this.nCoffeeOunces += nCoffeeOunces;
+        } if (nSugarPackets > 0) {
+            this.nSugarPackets += nSugarPackets;
+        } if (nCreams > 0) {
+            this.nCreams += nCreams;
+        } if (nCups > 0) { this.nCups += nCups;
+        }
 
         System.out.println("Restocked: " + nCoffeeOunces + " ounces of coffee, " + nSugarPackets +
                            " sugar packets, " + nCreams + " creams, and " + nCups + " cups.");
@@ -121,7 +126,9 @@ public class Cafe extends Building {
      * @param nCups The number of cups to restock.
      */
     private void restock(int nCups) {
-        if (nCups > 0) { this.nCups += nCups; }
+        if (nCups > 0) {
+            this.nCups += nCups; 
+        }
         System.out.println("Restocked: " + nCups + " cups.");
     }
     
